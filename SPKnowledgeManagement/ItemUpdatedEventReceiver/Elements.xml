@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Receivers ListTemplateId="101" ListUrl="大华知识库">
+      <Receiver>
+        <Name>ItemUpdatedEventReceiverItemUpdated</Name>
+        <Type>ItemUpdated</Type>
+        <Assembly>$SharePoint.Project.AssemblyFullName$</Assembly>
+        <Class>SPKnowledgeManagement.ItemUpdatedEventReceiver.ItemUpdatedEventReceiver</Class>
+        <SequenceNumber>10000</SequenceNumber>
+      </Receiver>
+  </Receivers>
+</Elements>

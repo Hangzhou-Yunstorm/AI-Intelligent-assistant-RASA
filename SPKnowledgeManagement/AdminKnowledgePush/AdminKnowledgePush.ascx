@@ -1,0 +1,18 @@
+﻿<%@ Assembly Name="$SharePoint.Project.AssemblyFullName$" %>
+<%@ Assembly Name="Microsoft.Web.CommandUI, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+<%@ Register TagPrefix="SharePoint" Namespace="Microsoft.SharePoint.WebControls" Assembly="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+<%@ Register TagPrefix="Utilities" Namespace="Microsoft.SharePoint.Utilities" Assembly="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+<%@ Register TagPrefix="asp" Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" %>
+<%@ Import Namespace="Microsoft.SharePoint" %>
+<%@ Register TagPrefix="WebPartPages" Namespace="Microsoft.SharePoint.WebPartPages" Assembly="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="AdminKnowledgePush.ascx.cs" Inherits="SPKnowledgeManagement.AdminKnowledgePush.AdminKnowledgePush" %>
+<script src="~/_layouts/15/SPKnowledgeManagement/jquery/jquery.min.js"></script>
+
+<a id="aMailUrl" class="btn" style="display: block; height: 30px; border: 1px solid #0072C6; width: 100px; font-family: 'Microsoft Yahe'; font-size: 16px; line-height: 30px; text-align: center; text-decoration: none;">精华推送</a>
+<asp:HiddenField ID="hidMailUrl" runat="server" />
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#aMailUrl").attr("href", $("#<%= hidMailUrl.ClientID%>").val());
+    });
+</script>
+

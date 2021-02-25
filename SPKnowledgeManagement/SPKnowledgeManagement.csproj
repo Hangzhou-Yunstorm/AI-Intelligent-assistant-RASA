@@ -1,0 +1,1250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <TokenReplacementFileExtensions>ashx</TokenReplacementFileExtensions>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{736962B7-0663-4202-8826-C132A140721A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SPKnowledgeManagement</RootNamespace>
+    <AssemblyName>SPKnowledgeManagement</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Outlook, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SharePoint.Client.Runtime, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApprovedEventReceiver\ApprovedEventReceiver.cs" />
+    <Compile Include="CheckUserApprover\CheckUserApprover.cs" />
+    <Compile Include="CheckUserApprover\CheckUserApproverUserControl.ascx.cs">
+      <DependentUpon>CheckUserApproverUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckUserApprover\CheckUserApproverUserControl.ascx.designer.cs">
+      <DependentUpon>CheckUserApproverUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CheckUser\CheckUser.cs" />
+    <Compile Include="CheckUser\CheckUserUserControl.ascx.cs">
+      <DependentUpon>CheckUserUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckUser\CheckUserUserControl.ascx.designer.cs">
+      <DependentUpon>CheckUserUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocDispFormRedirector\DocDispFormRedirector.cs" />
+    <Compile Include="DocDispFormRedirector\DocDispFormRedirectorUserControl.ascx.cs">
+      <DependentUpon>DocDispFormRedirectorUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocDispFormRedirector\DocDispFormRedirectorUserControl.ascx.designer.cs">
+      <DependentUpon>DocDispFormRedirectorUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EvaluatePushJob.cs" />
+    <Compile Include="EvaluatePushJobInstall.cs" />
+    <Compile Include="ItemUpdatedEventReceiver\ItemUpdatedEventReceiver.cs" />
+    <Compile Include="KMRedirector\KMRedirector.cs" />
+    <Compile Include="KMRedirector\KMRedirectorUserControl.ascx.cs">
+      <DependentUpon>KMRedirectorUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KMRedirector\KMRedirectorUserControl.ascx.designer.cs">
+      <DependentUpon>KMRedirectorUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\SPKnowledgeManagement\FileUpload.ashx.cs">
+      <DependentUpon>FileUpload.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\head.Master.cs">
+      <DependentUpon>head.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\head.Master.designer.cs">
+      <DependentUpon>head.Master.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModerationRedirector\ModerationRedirector.cs" />
+    <Compile Include="ModerationRedirector\ModerationRedirectorUserControl.ascx.cs">
+      <DependentUpon>ModerationRedirectorUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModerationRedirector\ModerationRedirectorUserControl.ascx.designer.cs">
+      <DependentUpon>ModerationRedirectorUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAdminKnowledgePush\NewAdminKnowledgePush.cs" />
+    <Compile Include="NewAdminKnowledgePush\NewAdminKnowledgePushUserControl.ascx.cs">
+      <DependentUpon>NewAdminKnowledgePushUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewAdminKnowledgePush\NewAdminKnowledgePushUserControl.ascx.designer.cs">
+      <DependentUpon>NewAdminKnowledgePushUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolderAdminKnowledgePush\NewFolderAdminKnowledgePush.cs" />
+    <Compile Include="NewFolderAdminKnowledgePush\NewFolderAdminKnowledgePushUserControl.ascx.cs">
+      <DependentUpon>NewFolderAdminKnowledgePushUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewFolderAdminKnowledgePush\NewFolderAdminKnowledgePushUserControl.ascx.designer.cs">
+      <DependentUpon>NewFolderAdminKnowledgePushUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScoreSyncJob.cs" />
+    <Compile Include="NewKnowledgePushJob.cs" />
+    <Compile Include="ScoreSyncJobInstall.cs" />
+    <Compile Include="NewKnowledgePushJobInstall.cs" />
+    <Compile Include="SearchResultRedirect\SearchResultRedirect.cs" />
+    <Compile Include="SearchResultRedirect\SearchResultRedirectUserControl.ascx.cs">
+      <DependentUpon>SearchResultRedirectUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchResultRedirect\SearchResultRedirectUserControl.ascx.designer.cs">
+      <DependentUpon>SearchResultRedirectUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SitePages\config.cs" />
+    <Compile Include="SitePages\DocumentDown.aspx.cs">
+      <DependentUpon>DocumentDown.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SitePages\DocumentDown.aspx.designer.cs">
+      <DependentUpon>DocumentDown.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SitePages\JsonHelper.cs" />
+    <Compile Include="SitePages\KnowledgeMap.aspx.cs">
+      <DependentUpon>KnowledgeMap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SitePages\KnowledgeMap.aspx.designer.cs">
+      <DependentUpon>KnowledgeMap.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SitePages\DocumentList.aspx.cs">
+      <DependentUpon>DocumentList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SitePages\DocumentList.aspx.designer.cs">
+      <DependentUpon>DocumentList.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SitePages\DocumentUpload.aspx.cs">
+      <DependentUpon>DocumentUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SitePages\DocumentUpload.aspx.designer.cs">
+      <DependentUpon>DocumentUpload.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SitePages\EssencePush.aspx.cs">
+      <DependentUpon>EssencePush.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SitePages\EssencePush.aspx.designer.cs">
+      <DependentUpon>EssencePush.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SitePages\KnowledgeMapModel.cs" />
+    <Compile Include="SitePages\MailHelper.cs" />
+    <Compile Include="SitePages\SPTools.cs" />
+    <Compile Include="SitePages\UserCenter.aspx.cs">
+      <DependentUpon>UserCenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SitePages\UserCenter.aspx.designer.cs">
+      <DependentUpon>UserCenter.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SitePages\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SitePages\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SitePages\VisualWebPart1\VisualWebPart1.ascx.cs">
+      <DependentUpon>VisualWebPart1.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="SitePages\VisualWebPart1\VisualWebPart1.ascx.g.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VisualWebPart1.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ApprovedEventReceiver\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{c1757774-0c4d-4827-acda-0ba122ca4efe}</SharePointProjectItemId>
+    </None>
+    <None Include="CheckUserApprover\CheckUserApprover.webpart" />
+    <None Include="CheckUserApprover\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{3fa1eec6-6066-4769-8955-687902a9ec42}</SharePointProjectItemId>
+    </None>
+    <None Include="CheckUser\CheckUser.webpart" />
+    <None Include="CheckUser\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{0ebfa741-ae14-451d-83a0-02baff0c1c5e}</SharePointProjectItemId>
+    </None>
+    <None Include="DocDispFormRedirector\DocDispFormRedirector.webpart" />
+    <None Include="DocDispFormRedirector\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{6b6355fc-4bab-4821-9424-5640963b108d}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\EvaluateTimeJob\EvaluateTimeJob.feature">
+      <FeatureId>{c45045c9-092d-4e4b-984a-caa3e24d2dc1}</FeatureId>
+    </None>
+    <None Include="Features\WebPartFeature\WebPartFeature.feature">
+      <FeatureId>{b5795df4-c703-4eab-9af9-b93f9c2c4841}</FeatureId>
+    </None>
+    <None Include="Features\SitePagesFeature\SitePagesFeature.feature">
+      <FeatureId>{fa0cb584-0852-4429-bf63-31b2b273d55d}</FeatureId>
+    </None>
+    <None Include="Features\ScoreSync\ScoreSync.feature">
+      <FeatureId>{785a9f17-9533-4fc4-845c-8dedb4a3c371}</FeatureId>
+    </None>
+    <None Include="Features\ItemEvent\ItemEvent.feature">
+      <FeatureId>{c40e333a-95a1-4f79-a56a-e4c3175b7699}</FeatureId>
+    </None>
+    <None Include="Features\PushTimeJob\PushTimeJob.feature">
+      <FeatureId>{6ebc45bd-93d3-42ec-888d-854c750a1e79}</FeatureId>
+    </None>
+    <None Include="ItemUpdatedEventReceiver\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{421dce6e-b92c-45d1-b8d9-5f638dea4da6}</SharePointProjectItemId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="KMRedirector\KMRedirector.webpart" />
+    <None Include="KMRedirector\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{83c76ca8-63c5-4c9b-a591-cbd434448bce}</SharePointProjectItemId>
+    </None>
+    <None Include="Layouts\SPKnowledgeManagement\FileUpload.ashx" />
+    <None Include="Layouts\SPKnowledgeManagement\plugin\bootstrap-3.3.5-dist\css\bootstrap-theme.css.map" />
+    <None Include="Layouts\SPKnowledgeManagement\plugin\bootstrap-3.3.5-dist\css\bootstrap.css.map" />
+    <None Include="Layouts\SPKnowledgeManagement\plugin\bootstrap-3.3.5-dist\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Layouts\SPKnowledgeManagement\plugin\bootstrap-3.3.5-dist\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="Layouts\SPKnowledgeManagement\plugin\bootstrap-3.3.5-dist\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Layouts\SPKnowledgeManagement\plugin\bootstrap-3.3.5-dist\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Layouts\SPKnowledgeManagement\plugin\jqPaginator-master\.gitignore" />
+    <None Include="Layouts\SPKnowledgeManagement\plugin\jqPaginator-master\.jshintrc" />
+    <None Include="Layouts\SPKnowledgeManagement\plugin\jqPaginator-master\.travis.yml" />
+    <None Include="Layouts\SPKnowledgeManagement\plugin\jqPaginator-master\package.json" />
+    <None Include="Layouts\SPKnowledgeManagement\plugin\jqPaginator-master\README.md" />
+    <None Include="Layouts\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{294608e8-ba81-47f2-a685-7b123f1126a4}</SharePointProjectItemId>
+    </None>
+    <None Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\.gitattributes" />
+    <None Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\.gitignore" />
+    <None Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\css\awesomeStyle\awesome.less" />
+    <None Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\css\awesomeStyle\fa.less" />
+    <None Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\asyncData\getNodes.php" />
+    <None Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\asyncData\getNodesForBigData.php" />
+    <None Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\asyncData\getNodes.php" />
+    <None Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\asyncData\getNodesForBigData.php" />
+    <None Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\README.md" />
+    <None Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\zTree.v3.jquery.json" />
+    <None Include="MasterPages\default.master" />
+    <None Include="MasterPages\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{4da5c83d-2361-4c09-b6d7-453311d0a79c}</SharePointProjectItemId>
+    </None>
+    <None Include="MasterPages\head.Master" />
+    <None Include="ModerationRedirector\ModerationRedirector.webpart" />
+    <None Include="ModerationRedirector\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{a63a1177-9f5b-44e0-bbc4-4c8e4480374c}</SharePointProjectItemId>
+    </None>
+    <None Include="NewAdminKnowledgePush\NewAdminKnowledgePush.webpart" />
+    <None Include="NewAdminKnowledgePush\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{e805e8af-0edb-4a6a-8fa1-550e5105ed17}</SharePointProjectItemId>
+    </None>
+    <None Include="NewFolderAdminKnowledgePush\NewFolderAdminKnowledgePush.webpart" />
+    <None Include="NewFolderAdminKnowledgePush\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{a731d1f4-2c56-455c-9093-9bd490513437}</SharePointProjectItemId>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Package\Package.package">
+      <PackageId>{3c86f69f-abf0-4dbd-91df-3fb4df4bf2f2}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+    <None Include="SearchResultRedirect\SearchResultRedirect.webpart" />
+    <None Include="SearchResultRedirect\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{9a3d2067-5ad0-4ab3-abec-71d196262abb}</SharePointProjectItemId>
+    </None>
+    <None Include="SitePages\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{841ee569-4d43-4ced-b2ea-c4b4d573f16d}</SharePointProjectItemId>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SitePages\VisualWebPart1\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d4dbd249-4b56-4e87-aa7e-28ed337c7d84}</SharePointProjectItemId>
+    </None>
+    <None Include="SitePages\VisualWebPart1\VisualWebPart1.webpart" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\copy-rows\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ApprovedEventReceiver\Elements.xml" />
+    <Content Include="CheckUserApprover\CheckUserApproverUserControl.ascx" />
+    <Content Include="CheckUserApprover\Elements.xml" />
+    <Content Include="CheckUser\CheckUserUserControl.ascx" />
+    <Content Include="CheckUser\Elements.xml" />
+    <Content Include="DocDispFormRedirector\DocDispFormRedirectorUserControl.ascx" />
+    <Content Include="DocDispFormRedirector\Elements.xml" />
+    <Content Include="Features\EvaluateTimeJob\EvaluateTimeJob.Template.xml">
+      <DependentUpon>EvaluateTimeJob.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\WebPartFeature\WebPartFeature.Template.xml">
+      <DependentUpon>WebPartFeature.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\SitePagesFeature\SitePagesFeature.Template.xml">
+      <DependentUpon>SitePagesFeature.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\ScoreSync\ScoreSync.Template.xml">
+      <DependentUpon>ScoreSync.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\ItemEvent\ItemEvent.Template.xml">
+      <DependentUpon>ItemEvent.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\PushTimeJob\PushTimeJob.Template.xml">
+      <DependentUpon>PushTimeJob.feature</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ItemUpdatedEventReceiver\Elements.xml" />
+    <Content Include="KMRedirector\Elements.xml" />
+    <Content Include="KMRedirector\KMRedirectorUserControl.ascx" />
+    <Content Include="Layouts\SPKnowledgeManagement\jquery\jquery-1.9.1.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\jquery\jquery-1.9.1.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\jquery\jquery.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\jquery\jquery.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\JS\DocumentDown.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\JS\DocumentList.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\JS\Index.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\JS\KnowledgeMap.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\JS\UserCenter.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrap-3.3.5-dist\css\bootstrap-theme.css" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrap-3.3.5-dist\css\bootstrap-theme.min.css" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrap-3.3.5-dist\css\bootstrap.css" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrap-3.3.5-dist\css\bootstrap.min.css" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrap-3.3.5-dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrap-3.3.5-dist\js\bootstrap.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrap-3.3.5-dist\js\bootstrap.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrap-3.3.5-dist\js\npm.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrap-fileinput\css\fileinput.css" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrap-fileinput\img\loading-sm.gif" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrap-fileinput\img\loading.gif" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrap-fileinput\js\fileinput.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\bootstrap-table-all.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\bootstrap-table-all.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\bootstrap-table-locale-all.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\bootstrap-table-locale-all.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\bootstrap-table.css" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\bootstrap-table.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\bootstrap-table.min.css" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\bootstrap-table.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\bootstrap\bootstrap.css" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\bootstrap\bootstrap.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\bootstrap\bootstrap.min.css" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\bootstrap\bootstrap.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\bootstrap\npm.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\accent-neutralise\bootstrap-table-accent-neutralise.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\accent-neutralise\bootstrap-table-accent-neutralise.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\angular\bootstrap-table-angular.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\angular\bootstrap-table-angular.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\cookie\bootstrap-table-cookie.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\cookie\bootstrap-table-cookie.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\editable\bootstra-edittable.css" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\editable\bootstrap-editable.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\editable\bootstrap-table-editable.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\editable\bootstrap-table-editable.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\export\bootstrap-table-export.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\export\bootstrap-table-export.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\export\tableExport.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\filter-control\bootstrap-table-filter-control.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\filter-control\bootstrap-table-filter-control.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\filter\bootstrap-table-filter.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\filter\bootstrap-table-filter.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\fixed-columns\bootstrap-table-fixed-columns.css" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\fixed-columns\bootstrap-table-fixed-columns.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\flat-json\bootstrap-table-flat-json.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\flat-json\bootstrap-table-flat-json.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\group-by-v2\bootstrap-table-group-by.css" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\group-by-v2\bootstrap-table-group-by.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\group-by-v2\bootstrap-table-group-by.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\group-by\bootstrap-table-group-by.css" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\group-by\bootstrap-table-group-by.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\group-by\bootstrap-table-group-by.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\img\clear.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\key-events\bootstrap-table-key-events.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\key-events\bootstrap-table-key-events.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\mobile\bootstrap-table-mobile.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\mobile\bootstrap-table-mobile.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\multiple-search\bootstrap-table-multiple-search.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\multiple-search\bootstrap-table-multiple-search.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\multiple-sort\bootstrap-table-multiple-sort.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\multiple-sort\bootstrap-table-multiple-sort.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\natural-sorting\bootstrap-table-natural-sorting.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\natural-sorting\bootstrap-table-natural-sorting.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\reorder-columns\bootstrap-table-reorder-columns.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\reorder-columns\bootstrap-table-reorder-columns.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\reorder-rows\bootstrap-table-reorder-rows.css" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\reorder-rows\bootstrap-table-reorder-rows.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\reorder-rows\bootstrap-table-reorder-rows.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\resizable\bootstrap-table-resizable.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\resizable\bootstrap-table-resizable.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\sticky-header\bootstrap-table-sticky-header.css" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\sticky-header\bootstrap-table-sticky-header.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\sticky-header\bootstrap-table-sticky-header.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\toolbar\bootstrap-table-toolbar.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\extensions\toolbar\bootstrap-table-toolbar.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-af-ZA.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-af-ZA.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-ar-SA.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-ar-SA.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-ca-ES.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-ca-ES.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-cs-CZ.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-cs-CZ.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-da-DK.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-da-DK.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-de-DE.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-de-DE.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-el-GR.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-el-GR.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-en-US.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-en-US.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-es-AR.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-es-AR.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-es-CR.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-es-CR.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-es-ES.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-es-ES.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-es-MX.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-es-MX.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-es-NI.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-es-NI.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-es-SP.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-es-SP.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-et-EE.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-et-EE.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-fa-IR.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-fa-IR.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-fr-BE.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-fr-BE.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-fr-FR.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-fr-FR.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-he-IL.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-he-IL.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-hr-HR.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-hr-HR.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-hu-HU.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-hu-HU.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-it-IT.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-it-IT.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-ja-JP.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-ja-JP.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-ka-GE.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-ka-GE.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-ko-KR.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-ko-KR.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-ms-MY.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-ms-MY.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-nb-NO.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-nb-NO.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-nl-NL.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-nl-NL.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-pl-PL.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-pl-PL.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-pt-BR.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-pt-BR.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-pt-PT.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-pt-PT.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-ro-RO.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-ro-RO.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-ru-RU.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-ru-RU.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-sk-SK.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-sk-SK.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-sv-SE.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-sv-SE.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-th-TH.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-th-TH.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-tr-TR.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-tr-TR.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-uk-UA.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-uk-UA.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-ur-PK.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-ur-PK.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-vi-VN.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-vi-VN.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-zh-CN.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-zh-CN.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-zh-TW.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstraptable_custom\locale\bootstrap-table-zh-TW.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrapvalidator-master\css\bootstrapValidator.css" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrapvalidator-master\css\bootstrapValidator.min.css" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrapvalidator-master\js\bootstrapValidator.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrapvalidator-master\js\bootstrapValidator.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrapvalidator-master\js\language\ar_MA.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrapvalidator-master\js\language\be_FR.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrapvalidator-master\js\language\be_NL.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrapvalidator-master\js\language\bg_BG.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrapvalidator-master\js\language\cs_CZ.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrapvalidator-master\js\language\da_DK.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrapvalidator-master\js\language\de_DE.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrapvalidator-master\js\language\en_US.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrapvalidator-master\js\language\es_CL.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrapvalidator-master\js\language\es_ES.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrapvalidator-master\js\language\fa_IR.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrapvalidator-master\js\language\fr_FR.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrapvalidator-master\js\language\gr_EL.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrapvalidator-master\js\language\he_IL.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrapvalidator-master\js\language\hu_HU.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrapvalidator-master\js\language\id_ID.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrapvalidator-master\js\language\it_IT.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrapvalidator-master\js\language\ja_JP.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrapvalidator-master\js\language\nl_NL.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrapvalidator-master\js\language\no_NO.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrapvalidator-master\js\language\pl_PL.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrapvalidator-master\js\language\pt_BR.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrapvalidator-master\js\language\pt_PT.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrapvalidator-master\js\language\ro_RO.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrapvalidator-master\js\language\ru_RU.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrapvalidator-master\js\language\sq_AL.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrapvalidator-master\js\language\sr_RS.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrapvalidator-master\js\language\sv_SE.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrapvalidator-master\js\language\th_TH.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrapvalidator-master\js\language\tr_TR.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrapvalidator-master\js\language\ua_UA.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrapvalidator-master\js\language\vi_VN.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrapvalidator-master\js\language\zh_CN.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\bootstrapvalidator-master\js\language\zh_TW.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\dist\chart\bar.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\dist\chart\chord.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\dist\chart\eventRiver.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\dist\chart\force.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\dist\chart\funnel.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\dist\chart\gauge.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\dist\chart\heatmap.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\dist\chart\k.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\dist\chart\line.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\dist\chart\map.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\dist\chart\pie.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\dist\chart\radar.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\dist\chart\scatter.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\dist\chart\tree.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\dist\chart\treemap.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\dist\chart\venn.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\dist\chart\wordCloud.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\dist\echarts-all.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\dist\echarts.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\fileupload\AjaxFileUpload-1.0.1.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\fileupload\ajaxfileupload.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\jqPaginator-master\dist\1.0.0\jqPaginator.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\jqPaginator-master\dist\1.0.1\jqPaginator.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\jqPaginator-master\dist\1.0.2\jqPaginator.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\jqPaginator-master\dist\1.1.0\jqPaginator.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\jqPaginator-master\dist\1.2.0\jqPaginator.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\jqPaginator-master\Gruntfile.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\jqPaginator-master\src\index.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\jqPaginator-master\src\js\jqPaginator.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\jqPaginator-master\src\js\jquery.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\jqPaginator-master\test\specs\jqPaginatorSpec.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\jsMind\js\jsmind.draggable.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\jsMind\js\jsmind.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\jsMind\js\jsmind.screenshot.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\jsMind\style\jsmind.css" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\listPager\SPListPager.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\loading\images\loading.gif" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\loading\jquery.showLoading.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\loading\showLoading.css" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\startScore\star-rating.css" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\startScore\star-rating.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\Viwepager\slider.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\Viwepager\Viwepager.css" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\apiCss\api.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\apiCss\common.css" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\apiCss\common_ie6.css" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\apiCss\img\apiMenu.gif" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\apiCss\img\apiMenu.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\apiCss\img\background.jpg" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\apiCss\img\chinese.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\apiCss\img\close.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\apiCss\img\contact-bg.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\apiCss\img\english.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\apiCss\img\header-bg.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\apiCss\img\lightbulb.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\apiCss\img\overlay_arrow.gif" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\apiCss\img\overlay_arrow.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\apiCss\img\overlay_bg.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\apiCss\img\overlay_close_IE6.gif" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\apiCss\img\zTreeStandard.gif" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\apiCss\img\zTreeStandard.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\apiCss\jquery-1.6.2.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\apiCss\jquery.ztree.core.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\apiCss\zTreeStyleForApi.css" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\API_cn.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\API_en.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\fn.zTree.destroy.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\fn.zTree.getZTreeObj.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\fn.zTree.init.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\fn.zTree._z.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.async.autoParam.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.async.contentType.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.async.dataFilter.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.async.dataType.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.async.enable.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.async.otherParam.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.async.type.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.async.url.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.callback.beforeAsync.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.callback.beforeCheck.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.callback.beforeClick.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.callback.beforeCollapse.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.callback.beforeDblClick.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.callback.beforeDrag.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.callback.beforeDragOpen.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.callback.beforeDrop.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.callback.beforeEditName.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.callback.beforeExpand.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.callback.beforeMouseDown.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.callback.beforeMouseUp.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.callback.beforeRemove.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.callback.beforeRename.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.callback.beforeRightClick.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.callback.onAsyncError.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.callback.onAsyncSuccess.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.callback.onCheck.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.callback.onClick.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.callback.onCollapse.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.callback.onDblClick.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.callback.onDrag.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.callback.onDragMove.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.callback.onDrop.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.callback.onExpand.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.callback.onMouseDown.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.callback.onMouseUp.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.callback.onNodeCreated.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.callback.onRemove.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.callback.onRename.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.callback.onRightClick.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.check.autoCheckTrigger.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.check.chkboxType.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.check.chkDisabledInherit.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.check.chkStyle.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.check.enable.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.check.nocheckInherit.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.check.radioType.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.data.keep.leaf.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.data.keep.parent.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.data.key.checked.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.data.key.children.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.data.key.name.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.data.key.title.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.data.key.url.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.data.simpleData.enable.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.data.simpleData.idKey.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.data.simpleData.pIdKey.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.data.simpleData.rootPId.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.edit.drag.autoExpandTrigger.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.edit.drag.autoOpenTime.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.edit.drag.borderMax.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.edit.drag.borderMin.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.edit.drag.inner.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.edit.drag.isCopy.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.edit.drag.isMove.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.edit.drag.maxShowNodeNum.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.edit.drag.minMoveSize.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.edit.drag.next.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.edit.drag.prev.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.edit.editNameSelectAll.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.edit.enable.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.edit.removeTitle.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.edit.renameTitle.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.edit.showRemoveBtn.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.edit.showRenameBtn.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.treeId.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.treeObj.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.view.addDiyDom.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.view.addHoverDom.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.view.autoCancelSelected.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.view.dblClickExpand.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.view.expandSpeed.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.view.fontCss.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.view.nameIsHTML.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.view.removeHoverDom.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.view.selectedMulti.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.view.showIcon.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.view.showLine.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.view.showTitle.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\setting.view.txtSelectedEnable.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\treeNode.checked.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\treeNode.checkedOld.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\treeNode.check_Child_State.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\treeNode.check_Focus.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\treeNode.children.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\treeNode.chkDisabled.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\treeNode.click.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\treeNode.diy.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\treeNode.editNameFlag.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\treeNode.getCheckStatus.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\treeNode.getIndex.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\treeNode.getNextNode.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\treeNode.getParentNode.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\treeNode.getPath.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\treeNode.getPreNode.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\treeNode.halfCheck.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\treeNode.icon.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\treeNode.iconClose.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\treeNode.iconOpen.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\treeNode.iconSkin.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\treeNode.isAjaxing.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\treeNode.isFirstNode.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\treeNode.isHidden.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\treeNode.isHover.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\treeNode.isLastNode.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\treeNode.isParent.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\treeNode.level.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\treeNode.name.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\treeNode.nocheck.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\treeNode.open.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\treeNode.parentTId.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\treeNode.target.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\treeNode.tId.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\treeNode.url.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\treeNode.zAsync.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\zTreeObj.addNodes.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\zTreeObj.cancelEditName.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\zTreeObj.cancelSelectedNode.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\zTreeObj.checkAllNodes.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\zTreeObj.checkNode.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\zTreeObj.copyNode.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\zTreeObj.destroy.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\zTreeObj.editName.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\zTreeObj.expandAll.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\zTreeObj.expandNode.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\zTreeObj.getChangeCheckedNodes.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\zTreeObj.getCheckedNodes.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\zTreeObj.getNodeByParam.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\zTreeObj.getNodeByTId.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\zTreeObj.getNodeIndex.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\zTreeObj.getNodes.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\zTreeObj.getNodesByFilter.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\zTreeObj.getNodesByParam.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\zTreeObj.getNodesByParamFuzzy.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\zTreeObj.getSelectedNodes.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\zTreeObj.hideNode.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\zTreeObj.hideNodes.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\zTreeObj.moveNode.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\zTreeObj.reAsyncChildNodes.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\zTreeObj.refresh.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\zTreeObj.removeChildNodes.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\zTreeObj.removeNode.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\zTreeObj.selectNode.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\zTreeObj.setChkDisabled.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\zTreeObj.setEditable.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\zTreeObj.setting.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\zTreeObj.showNode.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\zTreeObj.showNodes.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\zTreeObj.transformToArray.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\zTreeObj.transformTozTreeNodes.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\cn\zTreeObj.updateNode.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\fn.zTree.destroy.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\fn.zTree.getZTreeObj.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\fn.zTree.init.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\fn.zTree._z.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.async.autoParam.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.async.contentType.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.async.dataFilter.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.async.dataType.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.async.enable.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.async.otherParam.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.async.type.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.async.url.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.callback.beforeAsync.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.callback.beforeCheck.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.callback.beforeClick.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.callback.beforeCollapse.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.callback.beforeDblClick.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.callback.beforeDrag.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.callback.beforeDragOpen.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.callback.beforeDrop.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.callback.beforeEditName.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.callback.beforeExpand.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.callback.beforeMouseDown.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.callback.beforeMouseUp.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.callback.beforeRemove.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.callback.beforeRename.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.callback.beforeRightClick.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.callback.onAsyncError.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.callback.onAsyncSuccess.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.callback.onCheck.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.callback.onClick.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.callback.onCollapse.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.callback.onDblClick.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.callback.onDrag.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.callback.onDragMove.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.callback.onDrop.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.callback.onExpand.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.callback.onMouseDown.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.callback.onMouseUp.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.callback.onNodeCreated.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.callback.onRemove.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.callback.onRename.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.callback.onRightClick.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.check.autoCheckTrigger.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.check.chkboxType.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.check.chkDisabledInherit.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.check.chkStyle.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.check.enable.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.check.nocheckInherit.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.check.radioType.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.data.keep.leaf.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.data.keep.parent.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.data.key.checked.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.data.key.children.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.data.key.name.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.data.key.title.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.data.key.url.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.data.simpleData.enable.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.data.simpleData.idKey.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.data.simpleData.pIdKey.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.data.simpleData.rootPId.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.edit.drag.autoExpandTrigger.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.edit.drag.autoOpenTime.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.edit.drag.borderMax.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.edit.drag.borderMin.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.edit.drag.inner.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.edit.drag.isCopy.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.edit.drag.isMove.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.edit.drag.maxShowNodeNum.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.edit.drag.minMoveSize.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.edit.drag.next.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.edit.drag.prev.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.edit.editNameSelectAll.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.edit.enable.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.edit.removeTitle.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.edit.renameTitle.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.edit.showRemoveBtn.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.edit.showRenameBtn.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.treeId.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.treeObj.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.view.addDiyDom.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.view.addHoverDom.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.view.autoCancelSelected.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.view.dblClickExpand.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.view.expandSpeed.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.view.fontCss.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.view.nameIsHTML.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.view.removeHoverDom.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.view.selectedMulti.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.view.showIcon.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.view.showLine.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.view.showTitle.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\setting.view.txtSelectedEnable.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\treeNode.checked.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\treeNode.checkedOld.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\treeNode.check_Child_State.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\treeNode.check_Focus.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\treeNode.children.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\treeNode.chkDisabled.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\treeNode.click.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\treeNode.diy.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\treeNode.editNameFlag.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\treeNode.getCheckStatus.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\treeNode.getIndex.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\treeNode.getNextNode.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\treeNode.getParentNode.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\treeNode.getPath.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\treeNode.getPreNode.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\treeNode.halfCheck.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\treeNode.icon.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\treeNode.iconClose.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\treeNode.iconOpen.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\treeNode.iconSkin.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\treeNode.isAjaxing.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\treeNode.isFirstNode.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\treeNode.isHidden.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\treeNode.isHover.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\treeNode.isLastNode.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\treeNode.isParent.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\treeNode.level.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\treeNode.name.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\treeNode.nocheck.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\treeNode.open.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\treeNode.parentTId.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\treeNode.target.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\treeNode.tId.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\treeNode.url.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\treeNode.zAsync.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\zTreeObj.addNodes.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\zTreeObj.cancelEditName.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\zTreeObj.cancelSelectedNode.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\zTreeObj.checkAllNodes.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\zTreeObj.checkNode.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\zTreeObj.copyNode.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\zTreeObj.destroy.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\zTreeObj.editName.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\zTreeObj.expandAll.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\zTreeObj.expandNode.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\zTreeObj.getChangeCheckedNodes.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\zTreeObj.getCheckedNodes.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\zTreeObj.getNodeByParam.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\zTreeObj.getNodeByTId.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\zTreeObj.getNodeIndex.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\zTreeObj.getNodes.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\zTreeObj.getNodesByFilter.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\zTreeObj.getNodesByParam.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\zTreeObj.getNodesByParamFuzzy.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\zTreeObj.getSelectedNodes.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\zTreeObj.hideNode.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\zTreeObj.hideNodes.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\zTreeObj.moveNode.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\zTreeObj.reAsyncChildNodes.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\zTreeObj.refresh.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\zTreeObj.removeChildNodes.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\zTreeObj.removeNode.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\zTreeObj.selectNode.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\zTreeObj.setChkDisabled.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\zTreeObj.setEditable.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\zTreeObj.setting.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\zTreeObj.showNode.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\zTreeObj.showNodes.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\zTreeObj.transformToArray.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\zTreeObj.transformTozTreeNodes.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\api\en\zTreeObj.updateNode.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\css\awesomeStyle\awesome.css" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\css\awesomeStyle\img\loading.gif" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\css\demo.css" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\css\metroStyle\img\line_conn.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\css\metroStyle\img\loading.gif" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\css\metroStyle\img\metro.gif" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\css\metroStyle\img\metro.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\css\metroStyle\metroStyle.css" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\css\zTreeStyle\img\diy\1_close.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\css\zTreeStyle\img\diy\1_open.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\css\zTreeStyle\img\diy\2.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\css\zTreeStyle\img\diy\3.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\css\zTreeStyle\img\diy\4.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\css\zTreeStyle\img\diy\5.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\css\zTreeStyle\img\diy\6.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\css\zTreeStyle\img\diy\7.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\css\zTreeStyle\img\diy\8.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\css\zTreeStyle\img\diy\9.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\css\zTreeStyle\img\line_conn.gif" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\css\zTreeStyle\img\loading.gif" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\css\zTreeStyle\img\zTreeStandard.gif" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\css\zTreeStyle\img\zTreeStandard.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\css\zTreeStyle\zTreeStyle.css" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\bigdata\common.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\bigdata\diy_async.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\bigdata\page.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\core\async.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\core\async_fun.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\core\click.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\core\custom_font.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\core\custom_icon.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\core\custom_iconSkin.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\core\expand.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\core\noicon.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\core\noline.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\core\otherMouse.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\core\searchNodes.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\core\simpleData.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\core\standardData.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\core\update_fun.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\core\url.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\excheck\checkbox.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\excheck\checkbox_chkDisabled.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\excheck\checkbox_count.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\excheck\checkbox_fun.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\excheck\checkbox_halfCheck.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\excheck\checkbox_nocheck.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\excheck\radio.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\excheck\radio_chkDisabled.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\excheck\radio_fun.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\excheck\radio_halfCheck.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\excheck\radio_nocheck.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\exedit\async_edit.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\exedit\drag.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\exedit\drag_fun.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\exedit\drag_super.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\exedit\edit.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\exedit\edit_fun.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\exedit\edit_super.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\exedit\multiTree.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\exhide\checkbox.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\exhide\common.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\exhide\radio.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\index.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\super\asyncForAll.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\super\awesome.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\super\checkbox_radio.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\super\diydom.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\super\dragWithOther.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\super\left_menu.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\super\left_menuForOutLook.gif" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\super\left_menuForOutLook.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\super\left_menuForOutLook.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\super\metro.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\super\oneclick.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\super\oneroot.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\super\rightClickMenu.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\super\select_menu.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\super\select_menu_checkbox.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\super\select_menu_radio.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\cn\super\singlepath.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\bigdata\common.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\bigdata\diy_async.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\bigdata\page.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\core\async.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\core\async_fun.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\core\click.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\core\custom_font.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\core\custom_icon.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\core\custom_iconSkin.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\core\expand.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\core\noicon.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\core\noline.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\core\otherMouse.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\core\searchNodes.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\core\simpleData.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\core\standardData.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\core\update_fun.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\core\url.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\excheck\checkbox.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\excheck\checkbox_chkDisabled.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\excheck\checkbox_count.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\excheck\checkbox_fun.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\excheck\checkbox_halfCheck.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\excheck\checkbox_nocheck.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\excheck\radio.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\excheck\radio_chkDisabled.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\excheck\radio_fun.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\excheck\radio_halfCheck.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\excheck\radio_nocheck.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\exedit\async_edit.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\exedit\drag.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\exedit\drag_fun.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\exedit\drag_super.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\exedit\edit.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\exedit\edit_fun.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\exedit\edit_super.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\exedit\multiTree.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\exhide\checkbox.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\exhide\common.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\exhide\radio.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\index.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\super\asyncForAll.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\super\awesome.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\super\checkbox_radio.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\super\diydom.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\super\dragWithOther.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\super\left_menu.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\super\left_menuForOutLook.gif" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\super\left_menuForOutLook.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\super\left_menuForOutLook.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\super\metro.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\super\oneclick.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\super\oneroot.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\super\rightClickMenu.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\super\select_menu.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\super\select_menu_checkbox.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\super\select_menu_radio.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\super\singlepath.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\demo\en\super\ztree.html" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\js\jquery-1.4.4.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\js\jquery.ztree.all.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\js\jquery.ztree.all.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\js\jquery.ztree.core.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\js\jquery.ztree.core.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\js\jquery.ztree.excheck.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\js\jquery.ztree.excheck.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\js\jquery.ztree.exedit.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\js\jquery.ztree.exedit.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\js\jquery.ztree.exhide.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\js\jquery.ztree.exhide.min.js" />
+    <Content Include="Layouts\SPKnowledgeManagement\plugin\zTree_v3-master\log v3.x.txt" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\css\DocumentDown.css" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\css\DocumentList.css" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\css\DocumentUpload.css" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\css\Index.css" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\css\KnowledgeMap.css" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\css\Master.css" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\css\UserCenter.css" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\fileIcon\ai.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\fileIcon\avi.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\fileIcon\bmp.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\fileIcon\cdr.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\fileIcon\chm.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\fileIcon\dll.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\fileIcon\doc.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\fileIcon\docx.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\fileIcon\dwg.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\fileIcon\eml.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\fileIcon\fla.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\fileIcon\folder.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\fileIcon\gif.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\fileIcon\html.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\fileIcon\ini.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\fileIcon\jpg.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\fileIcon\mdb.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\fileIcon\mov.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\fileIcon\mp3.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\fileIcon\mp4.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\fileIcon\pdf.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\fileIcon\png.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\fileIcon\ppt.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\fileIcon\pptx.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\fileIcon\psd.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\fileIcon\rar.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\fileIcon\rm.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\fileIcon\rtf.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\fileIcon\swf.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\fileIcon\tif.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\fileIcon\ttf.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\fileIcon\txt.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\fileIcon\unknow.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\fileIcon\xls.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\fileIcon\xlsx.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\fileIcon\xml.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\fileIcon\zip.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\1.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\2.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\3.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\4.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\5.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\6.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\ad_ctr.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\bg.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\bg1.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\categoryIcon\变革管理.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\categoryIcon\基础能力.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\categoryIcon\战略管理.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\categoryIcon\数据管理.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\categoryIcon\流程管理.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\categoryIcon\项目管理.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\default_icon.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\default_icon1.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\DH-1.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\DH-2.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\dot.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\Group 10.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\Group 11.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\Group 4.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\help.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\ic_alarm.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\ic_chat.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\ic_star.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\ic_visibility.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\logo.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\logo-1.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\mailHeader\mailHeader.jpg" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\map.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\map_icon.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\more.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\more_default.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\more_hover.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\search.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\search1.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\Shape1.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\starkyNew.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\starsyNew.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\title_bg.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\upload.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\upload1.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\upload_icon.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\user.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\YST-1.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\YST-2.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\zoom46.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\img\zx.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\kmapIcon\blue-sub.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\kmapIcon\blue.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\kmapIcon\folder-root.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\kmapIcon\orange-sub.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\kmapIcon\orange.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\kmapIcon\red-sub.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\kmapIcon\red.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\kmapIcon\white-sub.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\kmapIcon\white.png" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\loading\img\loading-sm.gif" />
+    <Content Include="Layouts\SPKnowledgeManagement\theme\loading\img\loading.gif" />
+    <Content Include="MasterPages\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="MasterPages\Sample.txt" />
+    <Content Include="ModerationRedirector\Elements.xml" />
+    <Content Include="ModerationRedirector\ModerationRedirectorUserControl.ascx" />
+    <Content Include="NewAdminKnowledgePush\Elements.xml" />
+    <Content Include="NewAdminKnowledgePush\NewAdminKnowledgePushUserControl.ascx" />
+    <Content Include="NewFolderAdminKnowledgePush\Elements.xml" />
+    <Content Include="NewFolderAdminKnowledgePush\NewFolderAdminKnowledgePushUserControl.ascx" />
+    <Content Include="SearchResultRedirect\Elements.xml" />
+    <Content Include="SearchResultRedirect\SearchResultRedirectUserControl.ascx" />
+    <Content Include="SitePages\DocumentDown.aspx" />
+    <Content Include="SitePages\KnowledgeMap.aspx" />
+    <Content Include="SitePages\DocumentUpload.aspx" />
+    <Content Include="SitePages\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SitePages\DocumentList.aspx" />
+    <Content Include="SitePages\EssencePush.aspx" />
+    <Content Include="SitePages\NoPermission.html" />
+    <Content Include="SitePages\UserCenter.aspx" />
+    <Content Include="SitePages\Index.aspx" />
+    <Content Include="SitePages\Sample.txt" />
+    <Content Include="SitePages\VisualWebPart1\Elements.xml" />
+    <Content Include="SitePages\VisualWebPart1\VisualWebPart1.ascx">
+      <Generator>SharePointWebPartCodeGenerator</Generator>
+      <LastGenOutput>VisualWebPart1.ascx.g.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>

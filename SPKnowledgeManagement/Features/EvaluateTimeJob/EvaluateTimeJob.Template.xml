@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Feature xmlns="http://schemas.microsoft.com/sharepoint/"
+         AlwaysForceInstall="TRUE"
+         Id="c53fddee-56d4-4396-ae41-feeba3899b04"
+         ReceiverAssembly="SPKnowledgeManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4bc69ad3ebb6cdf7"
+         ReceiverClass="SPKnowledgeManagement.EvaluatePushJobInstall"
+         Scope="Site"
+         Title="SPKnowledgeManagement Feature3">
+</Feature>

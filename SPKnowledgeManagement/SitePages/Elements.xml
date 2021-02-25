@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="SitePages"  >
+    <File Path="SitePages\Sample.txt" Url="SitePages/Sample.txt" />
+    <File Path="SitePages\DocumentUpload.aspx" Url="SitePages/DocumentUpload.aspx" />
+    <File Path="SitePages\UserCenter.aspx" Url="SitePages/UserCenter.aspx" />
+    <File Path="SitePages\DocumentList.aspx" Url="SitePages/DocumentList.aspx" />
+    <File Path="SitePages\DocumentDown.aspx" Url="SitePages/DocumentDown.aspx" />
+    <File Path="SitePages\Index.aspx" Url="SitePages/Index.aspx" />
+    <File Path="SitePages\EssencePush.aspx" Url="SitePages/EssencePush.aspx" />
+    <File Path="SitePages\KnowledgeMap.aspx" Url="SitePages/KnowledgeMap.aspx" />
+    <File Path="SitePages\NoPermission.html" Url="SitePages/NoPermission.html" />
+  </Module>
+</Elements>

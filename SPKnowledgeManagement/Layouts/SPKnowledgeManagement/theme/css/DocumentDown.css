@@ -1,0 +1,336 @@
+﻿.divTitle {
+    width: 100%;
+    height: 100px;
+}
+
+.imgTitle {
+    width: 100%;
+    height: 100px;
+}
+
+.spanTitle {
+    font-family: 'Microsoft YaHei';
+    color: white;
+    font-size: 38px;
+    position: relative;
+    top: -75px;
+}
+
+.divDownContent {
+    max-width: 1560px;
+    position: relative;
+}
+
+.divNav {
+    text-align: left;
+    line-height: 1.667em;
+    font-size: 1.085em;
+    margin-top: 20px;
+    height: 20px;
+}
+
+    .divNav a {
+        text-decoration: none;
+    }
+
+.ulNav {
+    list-style: none;
+    padding-left: 0px;
+}
+
+    .ulNav li {
+        float: left;
+        padding: 0px 5px 0px 5px;
+    }
+
+.nav_root {
+    color: #535EB1;
+    text-decoration: none;
+    font-family: 'Microsoft YaHei';
+}
+
+a:link {
+    text-decoration: none; /* 指正常的未被访问过的链接*/
+}
+
+a:visited {
+    text-decoration: none; /*指已经访问过的链接*/
+}
+
+a:hover {
+    text-decoration: none; /*指鼠标在链接*/
+}
+
+a:active {
+    text-decoration: none; /* 指正在点的链接*/
+}
+
+.divDownContent1 {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.spanDocumentTitle {
+    font-family: 'Microsoft YaHei';
+    font-size: 22px;
+    display: block;
+    padding: 0px 15px 4px 15px;
+}
+
+.spanDetail {
+    display: block;
+    margin: 6px 10px 10px 15px;
+    color: #C7C7C7;
+    font-family: 'Microsoft YaHei';
+    font-size: 14px;
+    float: left;
+}
+
+#aPreview {
+    margin-top: 20px;
+    height: 30px;
+    line-height: 15px;
+    width: 100px;
+    color: #fff;
+    font-size: 16px;
+    font-family: 'Microsoft YaHei';
+}
+
+.btnDown {
+    margin-top: 20px;
+    height: 30px;
+    width: 100px;
+    line-height: 15px;
+    background-color: #127FFE;
+    color: #ffffff;
+    font-size: 16px;
+    font-family: 'Microsoft YaHei';
+    margin-left: 10px;
+}
+
+.btnSubmit {
+    margin-top: 10px;
+    height: 30px;
+    line-height: 15px;
+    width: 100px;
+    background-color: #595B58;
+    color: #ffffff;
+    font-size: 16px;
+    font-family: 'Microsoft YaHei';
+    float: right;
+    border: 1px solid #EAEAEA;
+}
+
+.userComment {
+    position: relative;
+    margin-top: 80px;
+    width: 100%;
+    /*height: 100%;*/
+}
+
+.spanDowm {
+    position: relative;
+    left: 350px;
+    top: -35px;
+    color: #C7C7C7;
+    display: block;
+    width: 50%;
+}
+
+.spanTimes {
+    color: red;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.divMyComment {
+    /*margin-top: 40px;*/
+}
+
+.spanMyComment {
+    font-size: 14px;
+    font-family: 'Microsoft YaHei';
+    display: block;
+    float: left;
+    position: relative;
+    top: 5px;
+    margin-right: 10px;
+}
+
+.textComment {
+    height: 120px;
+    width: 100%;
+    font-size: 12px;
+    padding: 5px 10px;
+    line-height: normal;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.spanUserComment {
+    font-size: 14px;
+    font-family: 'Microsoft YaHei';
+    display: block;
+    float: left;
+    position: relative;
+    margin-top: 50px;
+}
+
+.divUserComment {
+    /*border-bottom: 1px dashed #A6A6A6;*/
+    width: 100%;
+    position: relative;
+    height: 55px;
+}
+
+.hr {
+    border: 1px dashed #A6A6A6;
+    width: 100%;
+    position: relative;
+    float: left;
+    left: 0px;
+}
+
+.divUserCommentIcon {
+    width: 60px;
+    padding-bottom: 20px;
+}
+
+.imgUserCommentIcon {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.divUserCommentContent {
+    position: relative;
+    top: 14px;
+    /*left: 80px;*/
+    width: 100%;
+}
+
+.div-100-width {
+    width: 100%;
+}
+
+.div-90-width {
+    width: 90%;
+}
+
+.spanCommentUserName {
+    font-size: 14px;
+    font-family: 'Microsoft YaHei';
+    float: left;
+    position: relative;
+    top: 6px;
+}
+
+.spanDivision {
+    margin-left: 10px;
+    margin-right: 10px;
+    float: left;
+    position: relative;
+    top: 5px;
+}
+
+.replyFloor {
+    font-size: 16px;
+    font-family: 'Microsoft YaHei';
+    position: relative;
+    top: 6px;
+}
+
+.spanCommentContent {
+    font-size: 12px;
+    font-family: 'Microsoft YaHei';
+    position: relative;
+    /*top: 4px;*/
+    word-break: break-all;
+}
+
+.spanFloor {
+    position: relative;
+    float: right;
+    display: block;
+    top: 6px;
+}
+
+.aReply {
+    float: right;
+    margin-top: 5px;
+    font-family: 'Microsoft YaHei';
+    color: #808080;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.spanCommentTime {
+    float: right;
+    font-family: 'Microsoft YaHei';
+    color: #808080;
+    position: relative;
+    /*top: 4px;*/
+    font-size: 12px;
+}
+
+.aRecommendWord {
+    width: 20px;
+    height: 20px;
+    color: white;
+    background-color: #127FFE;
+    text-align: center;
+    display: inline-block;
+    margin-right: 10px;
+    float: left;
+}
+
+.ulRecommend {
+    list-style-type: none;
+    margin-top: 20px;
+}
+
+    .ulRecommend li {
+        width: 100%;
+        padding: 5px 0px 5px 0px;
+    }
+
+.aRecommendExcel {
+    width: 20px;
+    height: 20px;
+    color: white;
+    background-color: #549209;
+    text-align: center;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.spanRecommend {
+    font-family: 'Microsoft YaHei';
+}
+
+.spanRecommendUp {
+    font-family: 'Microsoft YaHei';
+    float: right;
+    color: #A2A2A2;
+}
+
+.downIntegral {
+    font-family: 'Microsoft YaHei';
+    color: #000;
+    font-size: 28px;
+}
+
+.row {
+    margin: 0px;
+}
+
+.spanClost {
+    text-align: right;
+    float: right;
+    height: 31px;
+    /* line-height: 15px; */
+    width: 20%;
+    display: block;
+    padding: 8px 14px;
+    background-color: #f7f7f7;
+    cursor: pointer;
+}

@@ -1,0 +1,1 @@
+﻿<%@ WebHandler Class="$SharePoint.Type.cacb7e9a-2053-4ab6-a965-eebbe8994eff.AssemblyQualifiedName$" %>  

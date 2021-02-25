@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectItem Type="Microsoft.VisualStudio.SharePoint.VisualWebPart" DefaultFile="CheckUserApproverUserControl.ascx" SupportedTrustLevels="FullTrust" SupportedDeploymentScopes="Site" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
+  <Files>
+    <ProjectItemFile Source="Elements.xml" Target="CheckUserApprover\" Type="ElementManifest" />
+    <ProjectItemFile Source="CheckUserApprover.webpart" Target="CheckUserApprover\" Type="ElementFile" />
+    <ProjectItemFile Source="CheckUserApproverUserControl.ascx" Target="CONTROLTEMPLATES\SPKnowledgeManagement\CheckUserApprover\" Type="TemplateFile" />
+  </Files>
+  <SafeControls>
+    <SafeControl Name="SafeControlEntry1" Assembly="$SharePoint.Project.AssemblyFullName$" Namespace="SPKnowledgeManagement.CheckUserApprover" TypeName="*" IsSafe="true" IsSafeAgainstScript="false" />
+  </SafeControls>
+</ProjectItem>

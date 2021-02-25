@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="3c86f69f-abf0-4dbd-91df-3fb4df4bf2f2" solutionId="3c86f69f-abf0-4dbd-91df-3fb4df4bf2f2" resetWebServer="false" sharePointProductVersion="15.0" name="SPKnowledgeManagement" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="b5795df4-c703-4eab-9af9-b93f9c2c4841" />
+    <featureReference itemId="fa0cb584-0852-4429-bf63-31b2b273d55d" />
+    <featureReference itemId="6ebc45bd-93d3-42ec-888d-854c750a1e79" />
+    <featureReference itemId="c40e333a-95a1-4f79-a56a-e4c3175b7699" />
+    <featureReference itemId="c45045c9-092d-4e4b-984a-caa3e24d2dc1" />
+    <featureReference itemId="785a9f17-9533-4fc4-845c-8dedb4a3c371" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="294608e8-ba81-47f2-a685-7b123f1126a4" />
+  </projectItems>
+</package>

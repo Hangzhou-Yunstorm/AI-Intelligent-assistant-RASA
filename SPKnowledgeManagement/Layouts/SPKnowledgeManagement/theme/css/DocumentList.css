@@ -1,0 +1,110 @@
+﻿.divTitle {
+    width: 100%;
+    height: 100px;
+}
+
+.divListContent {
+    max-width: 1560px;
+    position: relative;
+}
+
+.imgTitle {
+    width: 100%;
+    height: 100px;
+}
+
+.spanTitle {
+    font-family: 'Microsoft YaHei';
+    color: white;
+    font-size: 38px;
+    position: relative;
+    top: -75px;
+}
+
+.divNav {
+    text-align: left;
+    line-height: 1.667em;
+    font-size: 1.085em;
+    margin-top: 20px;
+    height: 20px;
+}
+
+    .divNav a {
+        text-decoration: none;
+    }
+
+.ulNav {
+    list-style: none;
+    padding-left: 0px;
+}
+
+    .ulNav li {
+        float: left;
+        color: #337ab7;
+        padding: 0px 5px 0px 5px;
+    }
+
+.nav_root {
+    color: #535EB1;
+    text-decoration: none;
+    font-family: 'Microsoft YaHei';
+    cursor: pointer;
+}
+
+a:link {
+    text-decoration: none; /* 指正常的未被访问过的链接*/
+}
+
+a:visited {
+    text-decoration: none; /*指已经访问过的链接*/
+}
+
+a:hover {
+    text-decoration: none; /*指鼠标在链接*/
+}
+
+a:active {
+    text-decoration: none; /* 指正在点的链接*/
+}
+
+.aRecommendWord {
+    width: 20px;
+    height: 20px;
+    color: white;
+    background-color: #127FFE;
+    text-align: center;
+    display: inline-block;
+    margin-right: 10px;
+    float: left;
+    left: 5px;
+    position: relative;
+}
+
+.aRecommendExcel {
+    width: 20px;
+    height: 20px;
+    color: white;
+    background-color: #549209;
+    text-align: center;
+    display: inline-block;
+    margin-right: 10px;
+    left: 5px;
+    position: relative;
+}
+
+.spanDocumentListTitle {
+    font-family: 'Microsoft YaHei';
+    font-size: 22px;
+    color: #4D4D4D;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.row {
+    margin: 0px;
+}
+
+.cursor {
+    cursor: pointer;
+    min-width: 25%;
+}

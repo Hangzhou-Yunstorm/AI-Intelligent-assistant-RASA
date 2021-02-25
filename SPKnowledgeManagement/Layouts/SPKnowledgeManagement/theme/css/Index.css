@@ -1,0 +1,524 @@
+﻿.divTop {
+    height: 180px;
+    width: 100%;
+}
+
+.divSeach {
+    position: absolute;
+    top: 140px;
+    width: 100%;
+}
+
+#hitxtSeach {
+    width: 800px;
+    height: 50px;
+    border-radius: 5px;
+    opacity: 0.5;
+    padding-left: 20px;
+    padding-right: 45px;
+    font-size: 18px;
+    color: #636166;
+    position: absolute;
+}
+
+#imgSeach {
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+}
+
+#hspanHot {
+    color: white;
+    position: absolute;
+    top: 60px;
+}
+
+#divContent {
+    max-width: 1560px;
+    position: relative;
+    /*top: 30px;*/
+    height: 100%;
+}
+
+.divLeft {
+    float: left;
+    width: 76%;
+    /*margin-left: 1%;*/
+}
+
+.divPart {
+    position: relative;
+    float: left;
+    width: 25.9%;
+    margin-right: 60px;
+}
+
+.divTitle {
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+    .divTitle img {
+        width: 20px;
+        height: 20px;
+        float: left;
+    }
+
+    .divTitle span {
+        font-family: 'Microsoft YaHei';
+        color: #4A4A4A;
+        font-size: 16px;
+        position: relative;
+        float: left;
+        margin-left: 20px;
+    }
+
+.ulSet {
+    list-style-type: none;
+    margin-top: 5px;
+    padding-left: 0px;
+    height: 100px;
+    font-size: 12px;
+}
+
+    .ulSet li {
+        padding-bottom: 5px;
+        cursor: pointer;
+    }
+
+.spanCategoryTitle {
+    cursor: pointer;
+}
+
+.imgMore {
+    float: right;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.liTime {
+    float: right;
+    color: #CECECE;
+}
+
+.divRight {
+    float: left;
+    width: 100%;
+    border: 1px solid #E1E1E1;
+    height: 180px;
+    /*margin-right: 1%;*/
+    margin-top: 20px;
+}
+
+.divUser {
+    width: 100%;
+    height: 60px;
+    background-color: #EFEFEF;
+    line-height: 60px;
+}
+
+.divUser1 {
+    position: absolute;
+   
+}
+
+.imgUserIcon {
+    position: relative;
+    top: 10px;
+    margin-left: 15px;
+    cursor: pointer;
+    width: 40px;
+    float:left;
+}
+
+.spanInfoTip {
+    font-family: 'Microsoft YaHei';
+    display: block;
+    height: 20px;
+    width: 22px;
+    background-color: red;
+    position: relative;
+    float:left;
+    top: 6px;
+    margin-left: -8px;
+    border-radius: 50px;
+    text-align: center;
+    color: white;
+    line-height: 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.spanUser {
+    font-family: 'Microsoft YaHei';
+    font-size: 14px;
+    position: relative;
+    /*top: 10px;*/
+}
+
+.ulUserCenter {
+    list-style-type: none;
+    padding: 6px 12% 0px 12%;
+}
+
+    .ulUserCenter li {
+        padding: 1px 0px 1px 0;
+        font-size: 10px;
+    }
+
+.spanUserCenter {
+    font-family: 'Microsoft YaHei';
+    font-size: 16px;
+    position: relative;
+    left: 10%;
+    top: 4px;
+    cursor: pointer;
+}
+
+.spanUserTodayDownload {
+    font-family: 'Microsoft YaHei';
+    position: absolute;
+    top: 50px;
+    font-size: 20px;
+    left: 30%;
+}
+
+.divUserContent {
+    width: 100%;
+    height:60px;
+    /*position: absolute;*/
+}
+
+.divIntegral {
+    float: left;
+    width: 49%;
+    text-align: center;
+    margin-top: 5px;
+    border-right: 1px dashed #E6E6E6;
+    height: 50px;
+}
+
+.divDownload {
+    float: left;
+    width: 51%;
+    text-align: center;
+    margin-top: 5px;
+    height: 50px;
+}
+
+.spanValue {
+    color: #1A83FF;
+}
+
+.divLine {
+    border-bottom: 1px dashed #E6E6E6;
+    margin: 0px 5% 0px 5%;
+    position: relative;
+    height: 30px;
+}
+
+.divUserImg {
+    /*position: absolute;*/
+    width: 100%;
+    text-align: center;
+    top: 128px;
+}
+
+.imgMap {
+    position: relative;
+    top: 128px;
+    left: 5%;
+    width: 48%;
+    cursor: pointer;
+    height: 30px;
+    background-color: #D85C04;
+    line-height: 30px;
+    color: white;
+    text-align: center;
+    display: block;
+    float: left;
+}
+
+.spanColor {
+    color: white;
+}
+
+.imgUpload {
+    position: relative;
+    left: 6%;
+    width: 48%;
+    cursor: pointer;
+    display: block;
+    background-color: #127FFE;
+    height: 30px;
+    line-height: 30px;
+    color: white;
+    text-align: center;
+    float: left;
+}
+
+.imgButtonMap {
+    cursor: pointer;
+    display: block;
+    background-color: #408D61;
+    color: white;
+    text-align: center;
+}
+
+.imgButtonUpload {
+    cursor: pointer;
+    display: block;
+    background-color: #408D61;
+    color: white;
+    text-align: center;
+}
+
+.divBottomContent {
+    margin: 0 6% 0 6%;
+    width: 88%;
+}
+
+.divContent1 {
+    /*float: left;*/
+}
+
+.divContent2 {
+    /*float: left;*/
+}
+
+.divYouLike {
+    float: left;
+    height: 30px;
+    width: 100%;
+    line-height: 30px;
+    border-left: 7px solid red;
+    font-family: 'Microsoft YaHei';
+    font-size: 16px;
+    padding-left: 20px;
+    margin-top: 5px;
+}
+
+.divGuessYouLikeContent {
+    position: relative;
+    top: 20px;
+}
+
+.spanGuessYouLikeTitle {
+    font-family: 'Microsoft YaHei';
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+#ulGuessYouLike {
+    list-style-type: none;
+    margin-top: 20px;
+    /* margin-left: 60px; */
+    padding-left: 0px;
+}
+
+    #ulGuessYouLike li {
+        padding-bottom: 15px;
+    }
+
+.spanYouLike {
+    font-size: 16px;
+    display: block;
+    font-family: 'Microsoft YaHei';
+    padding: 10px 0px 10px 0px;
+    cursor: pointer;
+}
+
+.pYouLike {
+    display: block;
+    font-family: 'Microsoft YaHei';
+    font-size: 12px;
+    text-indent: 2em;
+    color: #5A5A5A;
+    cursor: pointer;
+}
+
+.divNewUpload {
+    height: 30px;
+}
+
+.divNewUpload1 {
+    float: left;
+    height: 30px;
+    width: 100%;
+    line-height: 30px;
+    border-left: 7px solid red;
+    font-family: 'Microsoft YaHei';
+    font-size: 16px;
+    padding-left: 20px;
+    margin-top: 5px;
+}
+
+.divIcon {
+    margin-top: 30px;
+}
+
+.divNewUploadContent {
+    border-bottom: 1px dashed #E6E6E6;
+    height: 75px;
+}
+
+.divRank {
+    height: 30px;
+    /*margin-left: 60px;*/
+}
+
+.divRank1 {
+     float: left;
+    height: 30px;
+    width: 100%;
+    line-height: 30px;
+    border-left: 7px solid red;
+    font-family: 'Microsoft YaHei';
+    font-size: 16px;
+    padding-left: 20px;
+    margin-top: 5px;
+}
+
+.div-20-width {
+    width: 20%;
+    float: left;
+}
+
+    .div-20-width img {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+.div-80-width {
+    width: 80%;
+    float: left;
+}
+
+    .div-80-width p {
+        text-indent: 2em;
+        margin-left: 20px;
+        margin-top: 45px;
+        font-size: 12px;
+        display: block;
+        height: 70px;
+    }
+
+..div-100-width {
+    width: 100px;
+    float: left;
+}
+
+.div-100-width p {
+    text-indent: 2em;
+    margin-left: 20px;
+    margin-top: 45px;
+    font-size: 12px;
+    display: block;
+    height: 70px;
+}
+
+.imgaArticlePic {
+    margin-top: 15px;
+    margin-left: 0px;
+    float: left;
+}
+
+.spanArticleType {
+    color: white;
+    position: relative;
+    left: -83px;
+    top: 16px;
+    float: left;
+    display: block;
+    width: 60px;
+}
+
+.spanArticleTitle {
+    position: relative;
+    top: 18px;
+    font-family: 'Microsoft YaHei';
+    font-size: 12px;
+    left: -40px;
+    float: left;
+    cursor: pointer;
+}
+
+.imgArticleIcon {
+    margin-left: 0px;
+}
+
+.spanArticle {
+    color: #A2A2A2;
+    margin-left:5px;
+}
+
+.divRankContent ul {
+    list-style-type: none;
+    margin-top: 20px;
+    /*margin-left: 60px;*/
+    padding-left: 0px;
+}
+
+    .divRankContent ul li {
+        padding-bottom: 15px;
+    }
+
+.aRankTop3 {
+    width: 20px;
+    height: 20px;
+    color: white;
+    background-color: #127FFE;
+    text-align: center;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.aRankOther {
+    width: 20px;
+    height: 20px;
+    color: white;
+    background-color: #9A9A9A;
+    text-align: center;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.spanRankTitle {
+    font-family: 'Microsoft YaHei';
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+.spanRankingIntegral {
+    font-family: 'Microsoft YaHei';
+    font-size: 14px;
+    margin-left: 10px;
+    float: right;
+    margin-right: 20px;
+}
+
+.row {
+    margin: 0px;
+}
+
+a {
+    color: #333333;
+}
+
+    a:link {
+        text-decoration: none; /* 指正常的未被访问过的链接*/
+    }
+
+    a:visited {
+        text-decoration: none; /*指已经访问过的链接*/
+    }
+
+    a:hover {
+        text-decoration: none; /*指鼠标在链接*/
+    }
+
+    a:active {
+        text-decoration: none; /* 指正在点的链接*/
+    }

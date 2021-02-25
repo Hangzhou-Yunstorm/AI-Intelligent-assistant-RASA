@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Feature xmlns="http://schemas.microsoft.com/sharepoint/"
+         AlwaysForceInstall="TRUE"
+         Id="af8f289f-1e57-4d2b-9516-ecab756c2672"
+         ReceiverAssembly="SPKnowledgeManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4bc69ad3ebb6cdf7"
+         ReceiverClass="SPKnowledgeManagement.ScoreSyncJobInstall"
+         Scope="Site"
+         Title="SPKnowledgeManagement ScoreSync">
+</Feature>

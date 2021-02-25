@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Feature xmlns="http://schemas.microsoft.com/sharepoint/"
+         AlwaysForceInstall="TRUE"
+         Id="4bd05b3e-68da-4d54-be36-95af89052c3d"
+         ReceiverAssembly="SPKnowledgeManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4bc69ad3ebb6cdf7"
+         ReceiverClass="SPKnowledgeManagement.NewKnowledgePushJobInstall"
+         Scope="Site"
+         Title="SPKnowledgeManagement PushTimeJob">
+</Feature>

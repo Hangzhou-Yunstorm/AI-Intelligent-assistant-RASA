@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectItem Type="Microsoft.VisualStudio.SharePoint.VisualWebPart" DefaultFile="SearchResultRedirectUserControl.ascx" SupportedTrustLevels="FullTrust" SupportedDeploymentScopes="Site" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
+  <Files>
+    <ProjectItemFile Source="Elements.xml" Target="SearchResultRedirect\" Type="ElementManifest" />
+    <ProjectItemFile Source="SearchResultRedirect.webpart" Target="SearchResultRedirect\" Type="ElementFile" />
+    <ProjectItemFile Source="SearchResultRedirectUserControl.ascx" Target="CONTROLTEMPLATES\SPKnowledgeManagement\SearchResultRedirect\" Type="TemplateFile" />
+  </Files>
+  <SafeControls>
+    <SafeControl Name="SafeControlEntry1" Assembly="$SharePoint.Project.AssemblyFullName$" Namespace="SPKnowledgeManagement.SearchResultRedirect" TypeName="*" IsSafe="true" IsSafeAgainstScript="false" />
+  </SafeControls>
+</ProjectItem>
